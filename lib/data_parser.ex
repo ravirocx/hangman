@@ -8,4 +8,4 @@ defmodule DataParser do
 	end
 end
 
-IO.puts DataParser.parse_data()
+#IO.puts DataParser.parse_data()

@@ -1,6 +1,6 @@
 defmodule Hangman do
  use Application
-  def start(_type, _args) do
+  def start do
     Super.start_link()
   end
 end
