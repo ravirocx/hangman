@@ -37,11 +37,11 @@ __|__
     Enum.with_index(secret_word) |> Enum.filter_map(fn {x, _} -> x == guess end, fn {_, i} -> i end)
    end
 
-	def run_every_time(secret_word, secret_word, accumulator, used_letters) do
+	def run_everytime(secret_word, secret_word, accumulator, used_letters) do
     IO.puts "********Congratulutaions********"
     "The correct answer as you guessed is #{secret_word}"
   end
-  def run_every_time(secret_word, solution, 5, used_letters) do
+  def run_everytime(secret_word, solution, 5, used_letters) do
    IO.puts "  ________
   |      |
   |    __@__
