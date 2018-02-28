@@ -1,18 +1,18 @@
 defmodule Super do
-	use Supervisor
-	alias Main
+  use Supervisor
+  alias Main
 
-	def start_link do
-		Supervisor.start_link(__MODULE__, [])
-	end
+  def start_link do
+    Supervisor.start_link(__MODULE__, [])
+  end
 
-	def init(_) do
-		children = [
+  def init(_) do
+    children = [
 
-			worker(Main, [])
-			
-		]
+      worker(Main, [])
+      
+    ]
 
-		supervise(children, strategy: :one_for_one)
-	end
+    supervise(children, strategy: :one_for_one)
+  end
 end

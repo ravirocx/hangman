@@ -12,7 +12,6 @@ defmodule DataParser do
 		    	Enum.random(words_list)
 		    	|>String.graphemes
 		end
-  
-	end
+  end
 end
 
