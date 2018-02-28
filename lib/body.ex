@@ -68,15 +68,20 @@ __|__
 	def run_everytime(secret_word, solution, accumulator, used_letters) do
 		hangme(accumulator)
 		guess= String.trim(IO.gets "input ")
+    if guess in used_letters do
+      IO.puts "That's already used boy\n"
+      IO.puts solution
+      IO.puts "you have used: #{used_letters} \n \n"
+      run_everytime(secret_word, solution, accumulator, used_letters)
+    end
     list_of_index=find_me(secret_word,guess)
     if list_of_index==[] do
-      used_letters=used_letters ++ [guess]
-      used_letters=used_letters ++ [" "]
       accumulator=accumulator+1
     else
       solution=replaceme(solution,guess,list_of_index)
     end
-
+    used_letters=used_letters ++ [guess]
+    used_letters=used_letters ++ [" "]
     IO.puts solution
     IO.puts "you have used: #{used_letters} \n \n"
     run_everytime(secret_word, solution, accumulator, used_letters)
